@@ -31,10 +31,14 @@ fun main(){
     Confeccionar un programa que permita cargar un número entero positivo de hasta tres cifras y
     muestre un mensaje indicando si tiene 1, 2, o 3 cifras. Mostrar un mensaje de
     error si el número de cifras es mayor.
-    */
 
-
-
+    println("valor: ")
+    val valor = readln()
+    if (valor.length == 1) println("Su numero tiene una cifra")
+    if (valor.length == 2) println("Su numero tiene dos cifras")
+    if (valor.length == 3) println("Su numero tiene tres cifras")
+    if (valor.length > 3) println("Numero no valido")
+     */
     /*
     Un postulante a un empleo, realiza un test de capacitación, se obtuvo
     la siguiente información:
@@ -42,6 +46,20 @@ fun main(){
     que contestó correctamente.
     Se pide confeccionar un programa que ingrese los dos datos por
     teclado e informe el nivel del mismo según el porcentaje de respuestas
-    correctas que ha obtenido, y sabiendo que
+    correctas que ha obtenido, y sabiendo que:
+
+    Nivel máximo:	Porcentaje>=90%.
+	Nivel medio:	Porcentaje>=75% y <90%.
+	Nivel regular:	Porcentaje>=50% y <75%.
+	Fuera de nivel:	Porcentaje<50%.
     */
+
+
+
+
+
+
+
+
+
 }
