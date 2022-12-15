@@ -1,4 +1,4 @@
-package ejercicios_iniciales_practica
+package ejercicios_practica_internet
 
 fun main() {
 

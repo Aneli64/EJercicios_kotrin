@@ -1,7 +1,4 @@
-package ejercicios_iniciales_practica
-
-import java.lang.IllegalArgumentException
-import java.lang.NumberFormatException
+package ejercicios_practica_internet
 
 fun main(){
     /*

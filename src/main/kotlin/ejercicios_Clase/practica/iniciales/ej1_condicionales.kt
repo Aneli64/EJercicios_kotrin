@@ -1,4 +1,4 @@
-package ejercicios_Clase
+package ejercicios_Clase.practica.iniciales
 
 fun main() {
     /*
