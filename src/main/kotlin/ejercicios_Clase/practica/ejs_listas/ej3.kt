@@ -10,41 +10,49 @@ package ejercicios_Clase.practica.ejs_listas
 
  */
 
-fun main()
-{
+fun main() {
     print("Cadena -> ")
     val cadena = readln()
 
-    var mutList = mutableListOf<Char>()
-    for(item in cadena) mutList.add(item)
+    var mutList = mutableListOf<String>()
+    for (item in cadena) mutList.add(item.toString())
 
-    print("Opciones -> /n [ 1- Mostrar lista | 2- Insertar caracter en posicion | 3- Actualizar (modificar) caracter en posicion | 4- Borrar caracter en una posicion]")
-    val input = readln().toInt()
+    println("Opciones -> \n [ 1- Mostrar lista | 2- Insertar caracter en posicion | 3- Actualizar (modificar) caracter en posicion | 4- Borrar caracter en una posicion | 5- Posicion ]")
+    var input = readln().toInt()
 
-    when(input)
-    {
-        1 -> print(mutList)
-        2 -> inCadPos()
-        3 -> {
-            print("Introduzca un caracter -> ")
-            val carac = readln()
-            print("Introduzca una posicion -> ")
-            val pos = readln().toInt()
-            actCarPos(mutList, carac, pos)
+    while (input != 5) {
+        when (input) {
+            1 -> println(mutList)
+            2 -> {
+                print("Introduzca un caracter -> ")
+                val carac = readln()
+                print("Introduzca una posicion -> ")
+                val pos = readln().toInt()
+                inCadPos(mutList, carac, pos)
+            }
+
+            3 -> {
+                print("Introduzca un caracter -> ")
+                val carac = readln()
+                print("Introduzca una posicion -> ")
+                val pos = readln().toInt()
+                actCarPos(mutList, carac, pos)
+            }
+
+            4 -> {
+                print("Introduzca una posicion -> ")
+                val pos = readln().toInt()
+                delCarPos(mutList, pos)
+            }
+
         }
-        4 -> delCarPos()
-
+        println("Opciones -> \n [ 1- Mostrar lista | 2- Insertar caracter en posicion | 3- Actualizar (modificar) caracter en posicion | 4- Borrar caracter en una posicion | 5- Salir ]")
+        input = readln().toInt()
     }
-    print(mutList)
 }
-
-fun inCadPos(){}
-fun actCarPos(lista: MutableList<Char>, caracter: String, posicion: Int)
-{
-
-    //lista[posicion] ==
+fun inCadPos(lista: MutableList<String>, caracter: String, pos: Int) = lista.add(pos, caracter)
+fun actCarPos(lista: MutableList<String>, caracter: String, posicion: Int) {
+    lista[posicion] = caracter
 }
-fun delCarPos(){}
-
-
+fun delCarPos(lista: MutableList<String>, pos: Int) = lista.remove(lista[pos])
 
