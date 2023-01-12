@@ -4,18 +4,18 @@ package ejercicios_Clase.practica.ejs_listas
 4 crea una aplicación supermercado con clave valor para 12 productos clave nombre del producto y valor el precio, leídos por teclado.
 
 4.2 crea un menú para borrar insertar actualizar productos
-4.3  crear una  compra  de 3 productos calculando su precio total.
+4.3  crear una  compra  de 3 productos calculando su precio total. FALTA ESTEEEEEEEEE
  */
 
 fun main() {
-    var catalogo = mutableMapOf<Int, String>()
+    var catalogo = mutableMapOf<Int, Int>()
     while (catalogo.size < 3) {
         println("Codigo producto -> ")
         var cod = readln().toInt()
         println("Nombre producto")
-        var nom = readln()
+        var precio = readln().toInt()
 
-        catalogo[cod] = nom
+        catalogo[cod] = precio
     }
 
     println("Introduzca una opción: [ 1- Borrar articulo por codigo | 2- Insertar articulo | 3- Actualizar producto por codigo | 4- Mostrar catalogo de articulos | 5- Salir]")
@@ -34,16 +34,16 @@ fun main() {
     }
 }
 
-fun insert(mapa: MutableMap<Int, String>) {
+fun insert(mapa: MutableMap<Int, Int>) {
     println("Introduzca el id de su producto (Formato numérico): ")
     var id_prod = readln().toInt()
     println("Introduzca su producto: ")
-    var prod = readln()
-    mapa[id_prod] = prod
+    var precio = readln().toInt()
+    mapa[id_prod] = precio
     println("Articulo insertado")
 }
 
-fun del(mapa: MutableMap<Int, String>) {
+fun del(mapa: MutableMap<Int, Int>) {
     println("Introduzca el codigo del articulo a eliminar: ")
     var id_prod = readln().toInt()
 
@@ -55,7 +55,7 @@ fun del(mapa: MutableMap<Int, String>) {
     println("Articulo borrado")
 }
 
-fun act(mapa: MutableMap<Int, String>) {
+fun act(mapa: MutableMap<Int, Int>) {
     println("Introduzca el codigo del articulo que desea actualizar: ")
     var id_prod = readln().toInt()
 
@@ -65,11 +65,11 @@ fun act(mapa: MutableMap<Int, String>) {
     }
 
     println("Introduzca el nuevo articulo asignado a ese codigo: ")
-    var new_produc = readln()
+    var new_produc = readln().toInt()
     mapa[id_prod] = new_produc
     println("Articulo actualizado")
 }
 
-fun mostrarCat(mapa: MutableMap<Int, String>) {
-    for ((c, v) in mapa) println("cod: $c | art: $v")
+fun mostrarCat(mapa: MutableMap<Int, Int>) {
+    for ((c, v) in mapa) println("Codigo: $c | Precio: $v")
 }
