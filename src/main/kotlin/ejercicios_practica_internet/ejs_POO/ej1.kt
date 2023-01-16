@@ -1,0 +1,27 @@
+package ejercicios_practica_internet.ejs_POO
+
+/*
+1) Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular y cantidad (puede tener decimales).
+
+El titular será obligatorio y la cantidad es opcional. Crea dos constructores que cumpla lo anterior.
+
+Crea sus métodos get, set y toString.
+
+Tendrá dos métodos especiales:
+
+ingresar(double cantidad): se ingresa una cantidad a la cuenta, si la cantidad introducida es negativa, no se hará nada.
+retirar(double cantidad): se retira una cantidad a la cuenta, si restando la cantidad actual a la que nos pasan es negativa, la cantidad de la cuenta pasa a ser 0.
+ */
+
+class Cuenta(var titual: String, var cantidad: Double = 0.0) {
+    fun ingresar(cantIng: Double) = if (cantIng >= 0) cantidad += cantIng else cantidad += 0
+    fun retirar(cantRet: Double) = if (cantidad - cantRet < 0) cantidad = 0.0 else cantidad -= cantRet
+    fun dineroCuenta() = "Usuario: $titual | Saldo: $cantidad"
+}
+fun main()
+{
+    val c1 = Cuenta("Elian", 400.00)
+    c1.ingresar(200.00)
+    c1.retirar(100.00)
+    println(c1.dineroCuenta())
+}
