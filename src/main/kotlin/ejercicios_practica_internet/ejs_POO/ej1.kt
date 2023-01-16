@@ -16,12 +16,14 @@ retirar(double cantidad): se retira una cantidad a la cuenta, si restando la can
 class Cuenta(var titual: String, var cantidad: Double = 0.0) {
     fun ingresar(cantIng: Double) = if (cantIng >= 0) cantidad += cantIng else cantidad += 0
     fun retirar(cantRet: Double) = if (cantidad - cantRet < 0) cantidad = 0.0 else cantidad -= cantRet
-    fun dineroCuenta() = "Usuario: $titual | Saldo: $cantidad"
+    override fun toString(): String {
+        return "Cuenta(titual='$titual', cantidad=$cantidad)"
+    }
 }
 fun main()
 {
     val c1 = Cuenta("Elian", 400.00)
     c1.ingresar(200.00)
     c1.retirar(100.00)
-    println(c1.dineroCuenta())
+    print(c1)
 }
