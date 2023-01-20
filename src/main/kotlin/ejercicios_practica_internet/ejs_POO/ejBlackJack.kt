@@ -1,43 +1,21 @@
 package ejercicios_practica_internet.ejs_POO
+class Partida(var n_jugadores:Int) {
+    fun inicio() {
+        println("Introduzca numero de jugadores")
+        val n_jugs = readln()
 
-/*
-class Partida(var n_jugadores:Int)
-{
-    fun inicio()
-    {
-        val barajaCoraz = mutableListOf<String>()
-        for (i in 1..54){
-            when
-            {
-                i <= 13 -> {
-                    if (i % 11 == 0) barajaCoraz.add("Jota" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 12 == 0) barajaCoraz.add("Reina" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 13 == 0) barajaCoraz.add("Rey" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-
-                }
-                i <= 26 -> {
-                    if (i % 11 == 0) barajaCoraz.add("Jota" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 12 == 0) barajaCoraz.add("Reina" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 13 == 0) barajaCoraz.add("Rey" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-
-                }
-                i <= 39 -> {
-                    if (i % 11 == 0) barajaCoraz.add("Jota" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 12 == 0) barajaCoraz.add("Reina" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 13 == 0) barajaCoraz.add("Rey" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-
-                }
-                i <= 53 -> {
-                    if (i % 11 == 0) barajaCoraz.add("Jota" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 12 == 0) barajaCoraz.add("Reina" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-                    if (i % 13 == 0) barajaCoraz.add("Rey" + "Corazones") else barajaCoraz.add("$i" + "Corazones")
-
-                }
-            }
+        while (!cond_vic()) {
 
         }
     }
-}*/
+
+    fun turno(): Boolean {
+        println("¿Quiere otra carta? |SI | NO| ")
+        val entrada = readln()
+        return entrada == "SI"
+    }
+
+    //fun cond_vic():
 fun main() {
     val barajaCoraz = mutableListOf<String>()
     for (i in 1..13) {
@@ -72,4 +50,5 @@ fun main() {
     }
 
     val baraja = barajaCoraz + barajaDiam + barajaTreb + barajaPicas
+    println(baraja)
 }
