@@ -1,6 +1,8 @@
 package ejercicios_Clase.practica.POO
 
 import ejercicios_Clase.practica.ejs_listas.del
+import java.lang.NullPointerException
+import kotlin.math.max
 
 /*
 Queremos mantener una colección de los libros que hemos ido leyendo, poniéndoles una calificación según nos haya gustado más o menos al leerlo.
@@ -38,24 +40,23 @@ contenido de todo el conjunto. En el programa principal realizar las siguientes 
 hasta que el conjunto esté vacío, volver a añadir un libro y mostrar el contenido final.
  */
 
-class ConjuntoLibros(var listaLibros: Array<Libro> = arrayOf(Libro(), Libro(), Libro())) {
-    //fun elimLibroTit(delTitulo: String) = listaLibros.any { it.titulo == delTitulo }
-    fun elimLibroTit(delTitulo: String) = listaLibros.filter { it.titulo == delTitulo }
-
-    fun elimLibAut(delAutor: String) = listaLibros.any { it.autor == delAutor }
-
-    fun mayorCalif()
-    {
-
+class ConjuntoLibros(var listaLibros: MutableList<Libro> = mutableListOf()) {
+    fun elimLibTit(delTitulo: String) {
+        for (item in listaLibros) if (item.titulo == delTitulo) listaLibros.remove(item)
     }
 
-    fun menorCalif()
-    {
+   /*fun elimLibAut(delAutor: String) {
+        for (i in 0..listaLibros.size) if (delAutor == listaLibros[i].autor) listaLibros[i] = Libro()
+    }*/
 
+    fun elimLibAut(delAutor: String) {
     }
 
-    fun mostrarConjLibros()
-    {
+    fun mayorCalif() = listaLibros.toList().sortedBy { it.calif } [listaLibros.size-1]
+
+    fun menorCalif() = listaLibros.toList().sortedBy { it.calif } [0]
+
+    fun mostrarConjLibros() {
 
     }
 
@@ -63,5 +64,15 @@ class ConjuntoLibros(var listaLibros: Array<Libro> = arrayOf(Libro(), Libro(), L
 }
 
 fun main() {
-    var libro1 = Libro("hola", "elian", 43, 6)
+    val libro1 = Libro("hola", "elian", 43, 6)
+    val libro2 = Libro("adios", "aneli", 70, 9)
+    val libro3 = Libro("ey", "pepe", 80, 4)
+
+    val conjunto = ConjuntoLibros(listOf(libro1, libro2, libro3))
+    //conjunto.elimLibAut("elian")
+    //conjunto.elimLibAut("aneli")
+    println(conjunto.mayorCalif())
+    println(conjunto.menorCalif())
+    println(conjunto)
+
 }
