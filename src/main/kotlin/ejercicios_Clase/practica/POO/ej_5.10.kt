@@ -35,6 +35,64 @@ se modificará la segunda con los métodos set y se volverán a mostrar y
 comparar.
  */
 
+class Carta(var numero: Int, var palo: String)
+{
+init {
+    numero in 1..13
+    palo in ("c,p,r,t")
+}
+    fun mostrarCarta():String{
+        var paloF = ""
+        when(palo)
+        {
+            "c" -> paloF = "Corazones"
+            "p" -> paloF = "Picas"
+            "r" -> paloF = "Rombos"
+            "t" -> paloF = "Treboles"
+        }
+        return "es el $numero de $paloF"
+    }
+    fun comparar(carta: Carta):String{
+        when
+        {
+            carta.numero > this.numero -> if (carta.numero > this.numero) return "Carta menor" else return "Carta mayor"
+            carta.numero == this.numero -> if (carta.palo > this.palo) return "Carta menor" else return "Carta mayor"
+        }
+        return "Cartas iguales"
+    }
+    override fun toString(): String {
+        return "Carta(numero=$numero, palo='$palo')"
+    }
+}
+
+fun main()
+{
+    var carta1 = Carta(2, "p")
+    var carta2 = Carta(2, "c")
+
+    println(carta1.mostrarCarta())
+    println(carta2.mostrarCarta())
+    println(carta1.comparar(carta2))
+}
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 
 
