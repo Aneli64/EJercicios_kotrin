@@ -36,43 +36,56 @@ class Libro(var titulo: String = "", var autor: String = "", var n_pags: Int = 0
 /*
 Posteriormente, crear una clase ConjuntoLibros, que almacena un conjunto de libros (con un vector de un tamaño fijo). Se pueden añadir libros que
 no existan (siempre que haya espacio), eliminar libros por título o autor, mostrar por pantalla los libros con la mayor y menor calificación y, por último, mostrar un
-contenido de todo el conjunto. En el programa principal realizar las siguientes operaciones: crear dos libros, añadirlos al conjunto, eliminarlos por los dos criterios (título y autor)
-hasta que el conjunto esté vacío, volver a añadir un libro y mostrar el contenido final.
+contenido de todo el conjunto.
  */
 
 class ConjuntoLibros(var listaLibros: MutableList<Libro> = mutableListOf()) {
-    fun elimLibTit(delTitulo: String) {
-        for (item in listaLibros) if (item.titulo == delTitulo) listaLibros.remove(item)
-    }
 
-   /*fun elimLibAut(delAutor: String) {
-        for (i in 0..listaLibros.size) if (delAutor == listaLibros[i].autor) listaLibros[i] = Libro()
-    }*/
+    fun addLibro(libro: Libro) = listaLibros.add(libro)
+    fun elimLibTit(delTitulo: String) {
+        for (item in listaLibros)
+            if (item.titulo == delTitulo) {
+                listaLibros.remove(item)
+                break
+            }
+    }
 
     fun elimLibAut(delAutor: String) {
+        for (item in listaLibros)
+            if (item.autor == delAutor) {
+                listaLibros.remove(item)
+                break
+            }
     }
 
-    fun mayorCalif() = listaLibros.toList().sortedBy { it.calif } [listaLibros.size-1]
+    fun mayorCalif() = listaLibros.toList().sortedBy { it.calif }[listaLibros.size - 1]
 
-    fun menorCalif() = listaLibros.toList().sortedBy { it.calif } [0]
+    fun menorCalif() = listaLibros.toList().sortedBy { it.calif }[0]
 
-    fun mostrarConjLibros() {
-
+    override fun toString(): String {
+        return "ConjuntoLibros(listaLibros=$listaLibros)"
     }
-
 
 }
 
 fun main() {
+
+    /*
+    En el programa principal realizar las siguientes operaciones: crear dos libros, añadirlos al conjunto, eliminarlos por los dos criterios (título y autor)
+hasta que el conjunto esté vacío, volver a añadir un libro y mostrar el contenido final.
+     */
     val libro1 = Libro("hola", "elian", 43, 6)
     val libro2 = Libro("adios", "aneli", 70, 9)
-    val libro3 = Libro("ey", "pepe", 80, 4)
 
-    val conjunto = ConjuntoLibros(listOf(libro1, libro2, libro3))
-    //conjunto.elimLibAut("elian")
-    //conjunto.elimLibAut("aneli")
-    println(conjunto.mayorCalif())
-    println(conjunto.menorCalif())
+    val libroF = Libro("Final", "pepe", 100, 10)
+
+    val conjunto = ConjuntoLibros(mutableListOf(libro1, libro2))
     println(conjunto)
+    conjunto.elimLibTit("hola")
+    conjunto.elimLibAut("aneli")
+    println(conjunto)
+    conjunto.addLibro(libroF)
+    println(conjunto)
+
 
 }
