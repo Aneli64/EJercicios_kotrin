@@ -15,25 +15,30 @@ setHoras(25) -> sumará 1 hora
 
 class Hora {
     var hora: Int = 0
-        //get() = field
         set(value) {
-            var contDias = 0
-            if (value > 24) {
-                for (i in 0..value) if (i % 24 == 0) contDias++
-                field = value - (24 * contDias)
-            } else field = value
+            var horas = value
+            while (horas >= 24) {
+                horas -= 24
+            }
+            field = horas
         }
-
     var minuto: Int = 0
         set(value) {
-            while ((value - 60) > 60) hora++
-            field = value
+            var minutos = value
+            while (minutos >= 60) {
+                minutos -= 60
+                hora++
+            }
+            field = minutos
         }
-
     var segundo: Int = 0
         set(value) {
-            while ((value - 60) > 60) minuto++
-            field = value
+            var segs = value
+            while (segs >= 60) {
+                segs -= 60
+                minuto++
+            }
+            field = segs
         }
 
     /*
@@ -44,8 +49,8 @@ Son las <h> horas <min> minutos y <seg> segundos de la mañana
      */
 
     fun mostrarhora24() = "Son las $hora horas $minuto minutos y $segundo segundos"
-    //fun mostrarhora12() =
-
+    fun mostrarhora12() =
+        if (hora >= 12) "Son las ${hora-12} horas $minuto minutos y $segundo de la tarde" else "Son las $hora horas $minuto minutos y $segundo de la mañana"
 
 }
 /*
@@ -63,9 +68,10 @@ El menú se repetirá hasta que se seleccione la opción salir.
 
 fun main() {
     var ej = Hora()
-    ej.hora = 2
-    ej.minuto = 40
+    ej.hora = 22
+    ej.minuto = 70
     ej.segundo = 120
 
-    println(ej.mostrarhora24()) //comprobar los setters pq no funcionan correctamente
+    println(ej.mostrarhora24())
+    println(ej.mostrarhora12())
 }
