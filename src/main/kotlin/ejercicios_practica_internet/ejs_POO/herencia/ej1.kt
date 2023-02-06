@@ -95,7 +95,7 @@ DNI: <DNI>
 Nombre: <Apellidos>, <Nombre>
 Sueldo: <sueldo_total>
  */
-
+/*
 class Programador(
     Nombre: String,
     Apellidos: String,
@@ -132,3 +132,5 @@ fun main() {
 
 
 }
+
+ */
