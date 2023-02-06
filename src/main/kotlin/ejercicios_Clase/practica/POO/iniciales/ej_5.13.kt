@@ -1,6 +1,4 @@
-package ejercicios_Clase.practica.POO
-
-import kotlin.random.Random
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
  Dentro del paquete juegos implementa una nueva clase Mano. Esta clase representa a  una mano de varias cartas para simular un juego de cartas.

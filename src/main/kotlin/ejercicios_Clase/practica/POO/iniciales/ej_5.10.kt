@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Implementa una clase Carta que represente a una carta de una baraja de póker. De

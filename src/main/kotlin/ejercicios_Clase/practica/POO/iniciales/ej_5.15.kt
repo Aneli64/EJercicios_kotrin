@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
  Se desea elaborar una pequeña aplicación para simular un reloj digital. Para esto se  creará un paquete tiempo, y dentro de él las clases hora y reloj. Mientras no se

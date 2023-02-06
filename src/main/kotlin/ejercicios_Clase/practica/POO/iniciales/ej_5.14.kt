@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Realiza la siguiente aplicación usando el lenguaje de programación Orientado a Objetos.

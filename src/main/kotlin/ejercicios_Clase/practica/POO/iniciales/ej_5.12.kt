@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Se quiere crear una clase Cuenta la cual se caracteriza por tener asociado un número de cuenta y un saldo disponible. Además, se puede consultar el saldo disponible,

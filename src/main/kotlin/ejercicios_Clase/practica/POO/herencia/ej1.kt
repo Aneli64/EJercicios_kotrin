@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_POO.herencia
+package ejercicios_Clase.practica.POO.herencia
 
 import java.awt.AWTPermission
 

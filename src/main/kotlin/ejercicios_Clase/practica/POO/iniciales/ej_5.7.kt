@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Crear una clase Coche, a través de la cual se pueda conocer el color del coche, la marca, el modelo, el número de caballos, el número de puertas y la matrícula.

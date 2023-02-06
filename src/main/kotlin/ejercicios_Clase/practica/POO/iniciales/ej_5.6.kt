@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 /*
 Crear una clase Rectángulo, con atributos base y altura. Con  métodos para calcular el área y el perímetro.
 Opcionalmente se puede crear el método print y toString para mostrar información sobre el rectángulo.

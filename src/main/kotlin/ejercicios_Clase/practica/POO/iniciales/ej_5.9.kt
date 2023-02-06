@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Implementa una clase Alumno que represente a los alumnos de una asignatura. De cada alumno interesa conocer su dni, su edad y su nota de cada trimestre.

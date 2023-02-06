@@ -1,8 +1,4 @@
-package ejercicios_Clase.practica.POO
-
-import ejercicios_Clase.practica.ejs_listas.del
-import java.lang.NullPointerException
-import kotlin.math.max
+package ejercicios_Clase.practica.POO.iniciales
 
 /*
 Queremos mantener una colección de los libros que hemos ido leyendo, poniéndoles una calificación según nos haya gustado más o menos al leerlo.
