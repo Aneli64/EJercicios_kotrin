@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_POO
+package ejercicios_practica_internet.ejs_POO.iniciales
 class Partida(var n_jugadores:Int) {
     fun inicio() {
         println("Introduzca numero de jugadores")

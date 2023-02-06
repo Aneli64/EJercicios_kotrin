@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_POO
+package ejercicios_practica_internet.ejs_POO.iniciales
 
 /*
 1) Crea una clase llamada Cuenta que tendrá los siguientes atributos: titular y cantidad (puede tener decimales).

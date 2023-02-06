@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_POO
+package ejercicios_practica_internet.ejs_POO.iniciales
 
 /*
 3) Haz una clase llamada Password que siga las siguientes condiciones:
