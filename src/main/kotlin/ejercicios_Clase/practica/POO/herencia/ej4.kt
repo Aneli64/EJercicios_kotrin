@@ -1,5 +1,6 @@
 package ejercicios_Clase.practica.POO.herencia
 
+import jdk.incubator.vector.DoubleVector
 import java.util.zip.DeflaterOutputStream
 
 /*
@@ -36,20 +37,14 @@ j. mostrar(): mostrar los componentes del menú y el importe total.
 class Menu {
     private var IVA: Float = 0.21F
     open var descuento: Float = 0.0F
-    var principal: Map<String, Double> = mapOf<String, Double>()
+    var principal: String = ""
         set(value) {
-            val valores =
-                mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
-            for ((c, v) in value) if (value.containsKey(valores.keys.any().toString())) field = value
+            val lista = listOf<String>("Entrecot 15€", "Pez Espada 12€", "Carrillada 10€", "Dorada 20€", "Otros 13€")
+            if (value in lista) field = value //intentar splir u otra forma
         }
 
-    constructor(principal: Map<String, Double>) {
-        this.principal = principal
-    }
+    var bebida: String = ""
 
-    override fun toString(): String {
-        return "Menu(IVA=$IVA, descuento=$descuento, principal=$principal)"
-    }
 }
 
 fun main() {
@@ -58,7 +53,7 @@ fun main() {
      for ((c, v) in valores) println(valores.keys)*/
 
     val menuEJ = mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
-    val menu1 = Menu(menuEJ)
+    val menu1 = Menu()
 
 
 }
