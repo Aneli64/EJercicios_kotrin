@@ -24,8 +24,32 @@ e. postre: int. Puede ser…
 2 – Helado (3€)
 Otros (4€)
  */
+open class Menu {
 
-/*
+    private var IVA: Float = 0.21F
+    open var descuento: Float = 0.0F
+
+    private val menuComida =
+        mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
+    var principal: String = ""
+        set(value) {
+            if (value in menuComida.keys) field = value else field = "Otros"
+        }
+
+    private val menuBebida = mapOf<Int, Double>(1 to 1.0, 2 to 1.5, 3 to 2.0)
+    var bebida: Int = 0
+        set(value) {
+            if (value in menuBebida.keys) field = value else field = 3
+        }
+
+    private val menuPostre = mapOf<Int, Double>(1 to 2.0, 2 to 3.0, 3 to 4.0)
+    var postre: Int = 0
+        set(value) {
+            if (value in menuPostre.keys) field = value else field = 4
+        }
+
+
+    /*
 f. Constructor vacío.
 g. Constructor con todos los parámetros necesarios para inicializar atributos (excepto IVA y descuento, que no se incluyen en el constructor
 por ser comunes a todos los menús).
@@ -34,26 +58,65 @@ i. importe(): calcula y devuelve un float con el importe total del menú.
 j. mostrar(): mostrar los componentes del menú y el importe total.
  */
 
-class Menu {
-    private var IVA: Float = 0.21F
-    open var descuento: Float = 0.0F
-    var principal: String = ""
-        set(value) {
-            val lista = listOf<String>("Entrecot 15€", "Pez Espada 12€", "Carrillada 10€", "Dorada 20€", "Otros 13€")
-            if (value in lista) field = value //intentar splir u otra forma
+    open fun importe() =
+        menuComida[principal]?.plus(menuBebida[bebida]!!)?.plus(menuPostre[postre]!!) //revisar que es el plus
+
+    fun mostrar(): String{
+        var principalS = menuComida[principal]
+        var bebidaS = ""
+        var postreS = ""
+        when (bebida) {
+            1 -> bebidaS = "Refresco"
+            2 -> bebidaS = "Vino"
+            else -> {
+                bebidaS = "Otros"
+            }
         }
+        when (postre) {
+            1 -> postreS = "Fruta"
+            2 -> postreS = "Helado"
+            else -> {
+                postreS = "Otros"
+            }
+        }
+        return "Principal -> $principalS \n Bebida -> $bebidaS \n Postre -> $postreS \n Importe total -> ${importe()}"
+    }
+}
+/*
+2. Crea una clase MenúInfantil que extienda la clase Menú.
+• Atributos:
+k. Los mismos que su clase padre. Pero…
+- En vez de Vino se ofrece Zumo.
+l. regalo: String. Puede ser…
+Muñeca
+Soldado
+• Métodos:
+m. Constructor vacío.
+n. Constructor con todos los parámetros necesarios para inicializar atributos (excepto IVA y descuento, que no se incluyen en el constructor por ser comunes a todos los menús).
+o. setters y getters.
+p. importe(): siempre es de 12€
+ */
 
-    var bebida: String = ""
+class MenuInfantil() : Menu()
+{
+    var regalo: String = ""
+        set(value) {
+            if (value in listOf("Muñeca", "Soldado")) field = value
+        }
+    override fun importe() = 12.0
 
+    //hacer override del mapa con bebidas para el vino o bien cambiar el condicional cuando salga 2 -> Zumo (en lugar de vino)
 }
 
+
 fun main() {
-    /* val valores =
-         mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
-     for ((c, v) in valores) println(valores.keys)*/
 
-    val menuEJ = mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
-    val menu1 = Menu()
+    val ej = Menu()
+    ej.principal = "Entrecot"
+    ej.bebida = 1
+    ej.postre = 2
 
+    println(ej.importe())
+    println(ej.mostrar())
 
 }
