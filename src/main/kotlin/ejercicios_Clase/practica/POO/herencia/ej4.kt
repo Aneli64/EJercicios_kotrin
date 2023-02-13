@@ -1,5 +1,6 @@
 package ejercicios_Clase.practica.POO.herencia
 
+import ejercicios_practica_internet.ejs_Funciones.menu
 import jdk.incubator.vector.DoubleVector
 import java.util.zip.DeflaterOutputStream
 
@@ -29,7 +30,7 @@ open class Menu {
     private var IVA: Float = 0.21F
     open var descuento: Float = 0.0F
 
-    private val menuComida =
+    val menuComida =
         mapOf<String, Double>("Entrecot" to 15.0, "Pez Espada" to 12.0, "Carrillada" to 10.0, "Otros" to 13.0)
     var principal: String = ""
         set(value) {
@@ -61,8 +62,8 @@ j. mostrar(): mostrar los componentes del menú y el importe total.
     open fun importe() =
         menuComida[principal]?.plus(menuBebida[bebida]!!)?.plus(menuPostre[postre]!!) //revisar que es el plus
 
-    fun mostrar(): String{
-        var principalS = menuComida[principal]
+    open fun mostrar(): String {
+        val principalS = menuComida[principal]
         var bebidaS = ""
         var postreS = ""
         when (bebida) {
@@ -97,26 +98,133 @@ o. setters y getters.
 p. importe(): siempre es de 12€
  */
 
-class MenuInfantil() : Menu()
-{
+class MenuInfantil() : Menu() {
     var regalo: String = ""
         set(value) {
             if (value in listOf("Muñeca", "Soldado")) field = value
         }
+
     override fun importe() = 12.0
+    override fun mostrar(): String {
+        val principalS = menuComida[principal]
+        var bebidaS = ""
+        var postreS = ""
+        when (bebida) {
+            1 -> bebidaS = "Refresco"
+            2 -> bebidaS = "Zumo"
+            else -> {
+                bebidaS = "Otros"
+            }
+        }
+        when (postre) {
+            1 -> postreS = "Fruta"
+            2 -> postreS = "Helado"
+            else -> {
+                postreS = "Otros"
+            }
+        }
+        return "Principal -> $principalS \n Bebida -> $bebidaS \n Postre -> $postreS \n Importe total -> ${importe()}"
+    }
 
-    //hacer override del mapa con bebidas para el vino o bien cambiar el condicional cuando salga 2 -> Zumo (en lugar de vino)
 }
 
+/*
+3. Crea una clase Test con método main().
+Un grupo de comensales ha entrado en nuestro restaurante y se dispone a pedir los menús.
+Antes de comenzar se establecerá el descuento promocional actual (de la clase Menú) al 15% y se pondrá la cuenta a cero (el importe total que pagará el grupo).
+Se irán preguntando uno a uno los menús que se desean (en un bucle):
+• Tipo de menú.
+• Principal.
+• Bebida.
+• Postre.
+• Regalo (sólo si es infantil).
+Al finalizar de introducir cada menú, se calculará el importe total y éste se sumará a la cuenta total. Los objetos menú y menú infantil que se haya utilizado
+para ir guardando las opciones de un menú puede ser reutilizados una y otra vez para el resto de menús, porque una vez calculado el importe del menú ya no se volverá a necesitar.
+Este proceso terminará cuando:
+• Se pulse Enter sin introducir Tipo de menú.
+• Se alcancen los 12 menús
+• Se superen los 140 euros.
+ */
 
+//clase inventada para gestionar las peticiones de menus de clientes
+class elegirMenu {
+
+    var count = 0
+    var importeTotal = 0.0
+    var countNumAdul = 0
+    var countNumNiñ = 0
+    fun pedirAdulto(tipoMenu: Menu) {
+        println("Introduzca su comida: (Entrecot | Pez Espada | Carrillada) \n")
+        val comida = readln()
+        tipoMenu.principal = comida
+        println("Introduzca su bebida: (1 - Refresco | 2 - Vino) \n")
+        val bebida = readln().toInt()
+        tipoMenu.bebida = bebida
+        println("Introduzca su postre: (1 - Fruta | 2 - Helado) \n")
+        val postre = readln().toInt()
+        tipoMenu.postre = postre
+    }
+
+    fun pedirNiño(tipoMenu: MenuInfantil) {
+        println("Introduzca su comida: (Entrecot | Pez Espada | Carrillada) \n")
+        val comida = readln()
+        tipoMenu.principal = comida
+        println("Introduzca su bebida: (1 - Refresco | 2 - Zumo) \n")
+        val bebida = readln().toInt()
+        tipoMenu.bebida = bebida
+        println("Introduzca su postre: (1 - Fruta | 2 - Helado) \n")
+        val postre = readln().toInt()
+        tipoMenu.postre = postre
+        println("Introduzca su regalo: Muñeca | Soldado")
+        val regalo = readln()
+        tipoMenu.regalo = regalo
+
+    }
+
+    fun pedirMenu() {
+        println("Elija un tipo de menu: (1- Menu Adultos | 2- Menu Infantil | 3- Salir) \n")
+        var entrada = readln().toInt()
+
+        while (count != 12 || importeTotal < 140.0) {
+            when (entrada) {
+                1 -> {
+                    elegirMenu().pedirAdulto(Menu())
+                    count++
+                    //importeTotal +=
+                    countNumAdul++
+                    println("Elija un tipo de menu: (1- Menu Adultos | 2- Menu Infantil | 3- Salir) \n")
+                    entrada = readln().toInt()
+                }
+
+                2 -> {
+                    elegirMenu().pedirNiño(MenuInfantil())
+                    count++
+                    importeTotal += 12.0
+                    countNumNiñ++
+                    println("Elija un tipo de menu: (1- Menu Adultos | 2- Menu Infantil | 3- Salir) \n")
+                    entrada = readln().toInt()
+                }
+
+                3 -> break
+            }
+        }
+
+        println(
+            "Numero de menus normales -> $countNumAdul \n Numero de menus de niños -> $countNumNiñ \n " +
+                    "Importe total -> $importeTotal \n Importe medio -> ${importeTotal / (countNumAdul + countNumNiñ)}"
+        )
+    }
+}
+
+/*
+Al finalizar la introducción de todos los menús se mostrará por pantalla:
+• Número de menús normales
+• Número de menús infantiles
+• Importe total del grupo
+• Importe medio por comensal
+ */
 fun main() {
-
-    val ej = Menu()
-    ej.principal = "Entrecot"
-    ej.bebida = 1
-    ej.postre = 2
-
-    println(ej.importe())
-    println(ej.mostrar())
-
+    val ej = elegirMenu()
+    ej.pedirMenu()
 }
+
