@@ -20,11 +20,11 @@ open class CartaGenerica(open var palo: String = "", open var numero: Int = 0) {
         return "CartaGenerica(palo='$palo', numero=$numero)"
     }
 
-    open fun mostrarCarta() = "La cara es el $numero de $palo"
+    open fun mostrarCarta() = "La carta es el $numero de $palo"
 }
 
 class CartaEspaniola() : CartaGenerica() {
-    override var numero: Int = 0
+    override var numero: Int = 1
         set(value) {
             if (value in (1..12)) field = value
         }
@@ -41,8 +41,8 @@ class CartaEspaniola() : CartaGenerica() {
             11 -> paloNum = "Caballo"
             12 -> paloNum = "Rey"
         }
-        if (numero !in (10..12)) return "CartaGenerica(palo='$palo', numero=$numero)"
-        else return "CartaGenerica(palo='$palo', numero=$paloNum)"
+        if (numero !in (10..12)) return "La carta es el $numero de $palo"
+        else return "La carta es el $paloNum de $palo"
     }
 
 }
@@ -53,11 +53,58 @@ contendrá ningún atributo adicional, pero de redefinirán los métodos necesar
 que los números válidos sean del 1 al 13 y los palos validos sean: Corazones, Picas,
 Rombos y Tréboles. Además de esto el método mostrar carta deberá sustituir los
 números del 11 al 13 por Jota, Reina y Rey.
+ */
+
+class CartaFrancesa() : CartaGenerica()
+{
+    override var numero: Int = 1
+        set(value) {
+            if (value in (1..13)) field = value
+        }
+    override var palo: String = ""
+        set(value) {
+            if (value in listOf("Corazones", "Picas", "Rombos", "Tréboles")) field = value
+        }
+    override fun mostrarCarta(): String {
+        var paloNum = ""
+        when (numero) {
+            11 -> paloNum = "Jota"
+            12 -> paloNum = "Reina"
+            13 -> paloNum = "Rey"
+        }
+        if (numero !in (11..13)) return  "La carta es el $numero de $palo"
+        else return  "La carta es el $paloNum de $palo"
+    }
+}
+
+/*
 -. Una clase PruebaCarta en la que se creen 3 tipos de cartas: una genérica, una
 española y otra francesa y se inicialicen y se muestren por pantalla
  */
 
-class CartaFrancesa()
+class PruebaCarta()
 {
+    init {
+        var cartaG = CartaGenerica()
+        cartaG.palo = "Espadas"
+        cartaG.numero = 7
+        var cartaE = CartaEspaniola()
+        cartaE.palo = "Oros"
+        cartaE.numero = 11
+        var cartaF = CartaFrancesa()
+        cartaF.palo = "Picas"
+        cartaF.numero = 12
 
+        println(cartaG.mostrarCarta())
+        println(cartaE.mostrarCarta())
+        println(cartaF.mostrarCarta())
+
+    }
+}
+
+
+fun main()
+{
+    var ej = PruebaCarta()
+    ej
 }

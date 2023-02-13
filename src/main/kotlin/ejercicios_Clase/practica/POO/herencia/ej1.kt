@@ -1,7 +1,5 @@
 package ejercicios_Clase.practica.POO.herencia
 
-import java.awt.AWTPermission
-
 /*
 9.Desarrolla una clase persona que contenga los siguientes atributos: Nombre, Apellidos,
 DNI. Para esta clase habrá que definir los siguientes atributos:
@@ -35,10 +33,10 @@ open class Empleado(
     Nombre: String,
     Apellidos: String,
     DNI: String,
-    private var Fecha_contrato: String,
-    private var sueldo_base: Double,
-    private var base_horas_extra: Double,
-    private var num_horas_extra: Int
+    var Fecha_contrato: String,
+    var sueldo_base: Double,
+    var base_horas_extra: Double,
+    var num_horas_extra: Int
 ) : Persona(Nombre, Apellidos, DNI) {
     fun calcular_sueldo() = sueldo_base + (base_horas_extra * num_horas_extra)
 }
@@ -95,16 +93,16 @@ DNI: <DNI>
 Nombre: <Apellidos>, <Nombre>
 Sueldo: <sueldo_total>
  */
-/*
+
 class Programador(
     Nombre: String,
     Apellidos: String,
     DNI: String,
     Fecha_contrato: String,
+    sueldo_base: Double,
     base_horas_extra: Double,
-    num_horas_extra: Int,
-    sueldo_base: Double
-) : Empleado(Nombre, Apellidos, DNI, Fecha_contrato, base_horas_extra, num_horas_extra, sueldo_base) {
+    num_horas_extra: Int
+) : Empleado(Nombre, Apellidos, DNI, Fecha_contrato, sueldo_base, base_horas_extra, num_horas_extra) {
     fun pedir_vacaciones() =
         "Hay que llegar a la siguiente entrega como sea, hasta entonces nadie puede coger vacaciones"
 
@@ -120,17 +118,29 @@ vacaciones y un aumento y después se imprimirá su nomina.
  */
 
 class ejecutar() {
+
+    var progam = Programador(
+        "Pepe", "Lopez Hernandez", "74939034R", "09/11/2022",
+        400.0, 9.0, 6
+    )
+
     val director = Directivo(
         "Elian", "Deniz Saiz", "937549345F", "02/08/2021", 1200.0,
         9.0, 3, 200.0, 100, "TIC CEO"
     )
-    var progam = Programador("Pepe", "Lopez Hernandez", "74939034R", "09/11/2022", 9.0, 4, 1400.0)
+
+    init {
+        println(director.imprimirNomina())
+        println(progam.pedir_vacaciones())
+        println(progam.pedir_aumento())
+        println(progam.imprimirNomina())
+    }
 
 }
 
 fun main() {
 
+    var ej = ejecutar()
+    ej
 
 }
-
- */
