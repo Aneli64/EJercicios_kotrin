@@ -1,8 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
-
-import ejercicios_practica_internet.ejs_Funciones.menu
-import jdk.incubator.vector.DoubleVector
-import java.util.zip.DeflaterOutputStream
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 5 herencia 2. Restaurante

@@ -1,6 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
-
-import kotlin.time.Duration.Companion.hours
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 5.3 herencia1. 2 Reloj-Alarma2 con Herencia Segunda forma

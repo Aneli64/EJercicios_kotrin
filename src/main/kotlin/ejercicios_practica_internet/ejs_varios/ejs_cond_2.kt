@@ -1,4 +1,4 @@
-package ejercicios_practica_internet
+package ejercicios_practica_internet.ejs_varios
 
 fun main() {
 

@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 9.Desarrolla una clase persona que contenga los siguientes atributos: Nombre, Apellidos,

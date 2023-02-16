@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 2.1. Desarrolla una clase CartaGenerica que tenga dos atributos, palo como cadena de

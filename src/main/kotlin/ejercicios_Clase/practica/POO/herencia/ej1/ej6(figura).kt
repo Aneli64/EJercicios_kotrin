@@ -1,4 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 Herencia – Interfaces

@@ -1,7 +1,4 @@
-package ejercicios_Clase.practica.POO.herencia
-
-import ejercicios_Clase.practica.POO.iniciales.Hora
-import ejercicios_Clase.practica.POO.iniciales.Reloj
+package ejercicios_Clase.practica.POO.herencia.ej1
 
 /*
 2
