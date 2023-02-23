@@ -11,25 +11,26 @@ añade a cada producto el número de producto que será un número que comience 
 Añade una función que devuelve el valor del último objeto
  */
 
-abstract class Produt()
-{
-    companion object
-    {
-        var numeroProducto : Int = 1
+abstract class Produt() {
+    companion object {
+        val tiposIVA = listOf<Int>(0, 4, 10, 21)
+        private var numeroProducto: Int = 1
+        fun mostrarCod() = numeroProducto
     }
 
-    var regularPrice:Double = 0.0
+    var regularPrice: Double = 0.0
     var IVA: Int = 0
         set(value) {
-            if(value in listOf<Int>(0, 4, 10, 21)) field = value
+            if (value in tiposIVA) field = value else println("IVA incorrecto")
         }
-    constructor(regularInitialPrice:Double, IVA: Int) : this() {
+
+    constructor(regularInitialPrice: Double, IVA: Int) : this() {
         regularPrice = regularInitialPrice
         this.IVA = IVA
         numeroProducto++
     }
 
 
-    abstract fun computeSalePrice():Double
-    abstract fun computeSpecialCustomerPrice():Double
+    abstract fun computeSalePrice(): Double
+    abstract fun computeSpecialCustomerPrice(): Double
 }

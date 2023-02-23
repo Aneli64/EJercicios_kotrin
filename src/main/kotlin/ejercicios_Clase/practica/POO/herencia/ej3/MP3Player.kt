@@ -14,7 +14,7 @@ class MP3Player(regularPrice: Double, manufacturer: String, var color: String, I
     override fun computeSalePrice() = regularPrice * 0.9
     override fun toString(): String {
         return "MP3Player \n ${"=".repeat(20)} \n " +
-                "regular price -> $regularPrice \n manufacturer -> $manufacturer \n color -> $color \n ${"=".repeat(20)}"
+                "cod -> ${numeroProducto} \n regular price -> $regularPrice \n manufacturer -> $manufacturer \n color -> $color \n ${"=".repeat(20)}"
     }
 
     //Para MP3Player, restar 15 al precio de venta

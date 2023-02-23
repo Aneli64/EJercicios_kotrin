@@ -29,8 +29,8 @@ class MyOnlineShop {
         val sony = TV(560.0, "LED", 100, 0)
         val samsung = TV(854.0, "OLED", 120, 0)
         val mp3 = MP3Player(89.4, "Ipod", "Rojo",0)
-        val libro1 = Book(24.8, "Leonardo", 1789)
-        val libro2 = Book(46.9, "Paco", 2008)
+        val libro1 = Book(24.8, "Leonardo", 1789, 0)
+        val libro2 = Book(46.9, "Paco", 2008, 0)
         val camera1 = Camera(650.0, "Cine",0)
         val camera2 = Camera(650.0, "Foto",0)
 
