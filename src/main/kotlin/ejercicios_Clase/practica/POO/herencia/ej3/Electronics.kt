@@ -7,6 +7,6 @@ Tiene un atributo manufacturer de tipo cadena
 Un constructor por parámetros Electronics(double regularPrice, String manufacturer)
  */
 
-abstract class Electronics(regularPrice: Double, var manufacturer: String): Produt(regularPrice)
+abstract class Electronics(regularPrice: Double, var manufacturer: String, IVA: Int): Produt(regularPrice, IVA)
 {
 }
