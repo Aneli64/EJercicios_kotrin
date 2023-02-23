@@ -1,0 +1,12 @@
+package ejercicios_Clase.practica.POO.herencia.ej3
+
+/*
+Escribir Electronics.
+Electronics es un Product y no provee la implementación del método abstracto computerSalePrice()
+Tiene un atributo manufacturer de tipo cadena
+Un constructor por parámetros Electronics(double regularPrice, String manufacturer)
+ */
+
+abstract class Electronics(regularPrice: Double, var manufacturer: String): Produt(regularPrice)
+{
+}
