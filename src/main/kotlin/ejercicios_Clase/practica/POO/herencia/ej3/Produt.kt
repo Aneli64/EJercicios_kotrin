@@ -11,7 +11,7 @@ añade a cada producto el número de producto que será un número que comience 
 Añade una función que devuelve el valor del último objeto
  */
 
-abstract class Produt() {
+abstract class Produt() : RelationInterface {
     companion object {
         val tiposIVA = listOf<Int>(0, 4, 10, 21)
         private var numeroProducto: Int = 1
@@ -30,6 +30,19 @@ abstract class Produt() {
         numeroProducto++
     }
 
+    override fun isGreater(a: Any): Boolean {
+        a as Produt
+        return a.regularPrice < this.regularPrice
+    }
+    override fun isLess(a: Any): Boolean {
+        a as Produt
+        return a.regularPrice > this.regularPrice
+    }
+
+    override fun isEqual(a: Any): Boolean {
+        a as Produt
+        return a.regularPrice == this.regularPrice
+    }
 
     abstract fun computeSalePrice(): Double
     abstract fun computeSpecialCustomerPrice(): Double

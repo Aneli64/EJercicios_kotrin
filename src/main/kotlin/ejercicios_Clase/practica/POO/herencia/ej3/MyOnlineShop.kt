@@ -34,9 +34,13 @@ class MyOnlineShop {
         val camera1 = Camera(650.0, "Cine",0)
         val camera2 = Camera(650.0, "Foto",0)
 
-        val listaProdut = listOf<Produt>(sony, samsung, mp3, libro1, libro2, camera1, camera2)
+        val listaProdut = listOf(sony, samsung, mp3, libro1, libro2, camera1, camera2)
         for (item in listaProdut) println("$item \n ººComputeSalePrice -> ${item.computeSalePrice()}ºº")
         for (item in listaProdut) println("Special Customer Price -> ${item.computeSpecialCustomerPrice()} \n ${("=".repeat(20))}")
+
+        if (sony.isGreater(samsung)) println("Es mayor") else println("No es mayor")
+        if (libro1.isLess(libro2)) println("Es menor") else println("No es menor")
+        if (camera1.isEqual(camera2)) println("Es igual") else println("No es igual")
     }
 }
 
