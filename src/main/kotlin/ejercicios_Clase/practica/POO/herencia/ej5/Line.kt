@@ -1,6 +1,8 @@
 package ejercicios_Clase.practica.POO.herencia.ej5
 
 import ejercicios_Clase.practica.POO.herencia.ej3.RelationInterface
+import kotlin.math.max
+import kotlin.math.min
 
 /*
 Escribir Line.java.
@@ -18,13 +20,16 @@ class Line(var x1: Double, var x2: Double, var y1: Double, var y2: Double) : Rel
 
     fun getLength() = Math.sqrt((x2-x1)*(x2-x1) + (y2-y1)*(y2-y1))
     override fun isGreater(a: Any): Boolean {
-        TODO("Not yet implemented")
+        a as Line
+        return a.getLength() < this.getLength()
     }
     override fun isLess(a: Any): Boolean {
-        TODO("Not yet implemented")
+        a as Line
+        return a.getLength() > this.getLength()
     }
 
     override fun isEqual(a: Any): Boolean {
-        TODO("Not yet implemented")
+        a as Line
+        return a.getLength() == this.getLength()
     }
 }
