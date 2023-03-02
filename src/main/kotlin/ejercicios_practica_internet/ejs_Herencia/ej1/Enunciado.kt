@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_Herencia
+package ejercicios_practica_internet.ejs_Herencia.ej1
 
 /*
 Implemente las siguientes clases:
