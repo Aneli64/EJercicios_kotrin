@@ -11,16 +11,13 @@ class Cazador() : Personaje() {
     }
 
     override var nombre: String = ""
-        set(value) {
-            if (nombre in listOf("Cazador", "Guerrero")) field = value else print("personaje no registrado")
-        }
     override var vida: Int = 0
         set(value) {
-            field = if (vida > 0) value else 0
+            field = if (vida >= 0) value else 0
         }
     override var escudo: Int = 0
         set(value) {
-            field = if (escudo > 0) value else 0
+            field = if (vida >= 0) value else 0
         }
 
     override fun defender(): Int {

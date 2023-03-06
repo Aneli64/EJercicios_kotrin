@@ -5,9 +5,6 @@ import ejercicios_practica_internet.ejs_Herencia.juegoRol.Arma
 class puaVenenosa(): Arma() {
     override var nombre: String = ""
     override var danio: Int = 0
-        set(value) {
-            field = if(danio > 0) value else 0
-        }
     override var danioVenen: Int = 0
     override var durabilidad: Int = 0
 
