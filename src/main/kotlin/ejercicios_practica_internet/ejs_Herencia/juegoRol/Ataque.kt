@@ -1,6 +1,5 @@
 package ejercicios_practica_internet.ejs_Herencia.juegoRol
 
-interface Combate {
+interface Ataque {
     fun atacar():Int
-    fun defender():Int
 }

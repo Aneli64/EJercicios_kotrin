@@ -4,11 +4,10 @@ import ejercicios_practica_internet.ejs_Herencia.juegoRol.Arma
 import ejercicios_practica_internet.ejs_Herencia.juegoRol.Personaje
 
 class Cazador() : Personaje() {
-    constructor(nombre: String, vida: Int, escudo: Int, tipoArma: Arma) : this() {
+    constructor(nombre: String, vida: Int, escudo: Int) : this() {
         this.nombre = nombre
         this.vida = vida
         this.escudo = escudo
-        this.tipoArma = tipoArma
     }
 
     override var nombre: String = ""
@@ -23,10 +22,6 @@ class Cazador() : Personaje() {
         set(value) {
             field = if (escudo > 0) value else 0
         }
-    override lateinit var tipoArma: Arma
-    override fun atacar(): Int {
-        TODO("Not yet implemented")
-    }
 
     override fun defender(): Int {
         TODO("Not yet implemented")
