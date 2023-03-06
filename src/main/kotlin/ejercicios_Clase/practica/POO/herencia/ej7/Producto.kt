@@ -13,4 +13,7 @@ abstract class Producto() {
     }
 
     abstract fun Calcular(cant_prod: Int): Double
+    override fun toString(): String {
+        return "Producto(nombre='$nombre', precio=$precio)"
+    }
 }

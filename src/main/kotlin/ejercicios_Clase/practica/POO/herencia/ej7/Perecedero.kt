@@ -12,5 +12,19 @@ class Perecedero() : Producto() {
         super.precio = precio
         this.diasParaCaducar = diasParaCaducar
     }
-    override fun Calcular(cant_prod: Int) = cant_prod * precio
+    override fun Calcular(cant_prod: Int) : Double
+    {
+        var precioF = precio
+        when(diasParaCaducar)
+        {
+           1 -> precioF = cant_prod * (precio * 0.80) //4 veces¿?
+           2 -> precioF = cant_prod * (precio * 0.60) //3 veces¿?
+           3 -> precioF = cant_prod * (precio * 0.50)
+        }
+        return precioF
+    }
+
+    override fun toString(): String {
+        return "Perecedero(nombre='$nombre', precio=$precio, diasParaCaducar=$diasParaCaducar)"
+    }
 }
