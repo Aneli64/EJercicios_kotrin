@@ -1,12 +1,11 @@
-package ejercicios_practica_internet.ejs_Herencia.juegoRol
+package ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol
 
-import ejercicios_practica_internet.ejs_Herencia.ej3.Monstruo
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.armas.katana
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.armas.puaVenenosa
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.personajes.Cazador
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.personajes.Gigante
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.personajes.Guerrero
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.personajes.Troll
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.armas.katana
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.armas.puaVenenosa
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.personajes.Cazador
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.personajes.Gigante
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.personajes.Guerrero
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.personajes.Troll
 
 class Juego {
     companion object {  //objetos creados y introducidos en listas para su posterior uso

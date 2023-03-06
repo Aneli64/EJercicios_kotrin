@@ -1,9 +1,8 @@
-package ejercicios_practica_internet.ejs_Herencia.juegoRol.personajes
+package ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.personajes
 
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.Arma
-import ejercicios_practica_internet.ejs_Herencia.juegoRol.Personaje
+import ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol.Personaje
 
-class Guerrero() : Personaje() {
+class Cazador() : Personaje() {
     constructor(nombre: String, vida: Int, escudo: Int) : this() {
         this.nombre = nombre
         this.vida = vida

@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_varios
+package ejercicios_practica_internet.ejs_varios.ejs_internet_antiguos
 
 /*
 Escribir un programa que permita al usuario obtener un identificador para cada uno de los socios de un club. Para eso ingresará nombre completo y número de DNI de cada socio,

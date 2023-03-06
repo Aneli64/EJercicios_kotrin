@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_varios
+package ejercicios_practica_internet.ejs_varios.ejs_internet_antiguos
 
 fun main(){
     /*

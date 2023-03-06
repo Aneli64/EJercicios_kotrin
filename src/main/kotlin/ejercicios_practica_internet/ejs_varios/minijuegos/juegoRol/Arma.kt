@@ -1,4 +1,4 @@
-package ejercicios_practica_internet.ejs_Herencia.juegoRol
+package ejercicios_practica_internet.ejs_varios.minijuegos.juegoRol
 
 abstract class Arma(): Ataque {
     abstract var nombre: String
