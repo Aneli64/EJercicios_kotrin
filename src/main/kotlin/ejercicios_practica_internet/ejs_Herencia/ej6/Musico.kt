@@ -1,6 +1,7 @@
 package ejercicios_practica_internet.ejs_Herencia.ej6
 
-abstract class Musico() {
+abstract class Musico(){ //musico tiene tocable para: musico que toque ese instrumento en su lista toque ese instrumento en secuencia.??
+
     var nombre: String = ""
     var edad: Int = 0
         set(value) {
