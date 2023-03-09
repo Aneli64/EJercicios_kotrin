@@ -1,0 +1,37 @@
+Supongamos que estás desarrollando un programa para una banda de música en la que los músicos
+pueden tocar varios instrumentos y los instrumentos pueden ser tocados por varios músicos.
+Tu tarea es implementar un modelo de objetos que refleje esta situación.
+
+Debes crear una clase abstracta "InstrumentoMusical" que incluya los campos de
+ nombre, tipo y afinación, así como los métodos para obtener y establecer estos campos.
+  Debes crear varias subclases de "InstrumentoMusical"
+ para representar diferentes tipos de instrumentos, como "Guitarra", "Batería", "Bajo", "Saxofón", etc.
+
+Cada músico debe tener un nombre, una edad y una lista de instrumentos que toca.
+Debes crear una clase abstracta "Músico" que incluya los campos de nombre, edad e
+ instrumentos, así como los métodos para obtener y establecer estos campos.
+Debes crear varias subclases de "Músico" para representar diferentes tipos de músicos,
+como "Guitarrista",
+"Baterista", "Bajista", "Saxofonista", etc.
+
+Además, debes crear una interfaz "Tocable" que tenga un método "tocar" que tome un músico
+como argumento y devuelva una cadena que represente el sonido producido por el músico al
+tocar todos sus instrumentos.
+
+Debes implementar la clase "Banda" que tenga una lista de músicos y una
+lista de instrumentos, y que pueda agregar músicos e instrumentos a las listas.
+La clase "Banda" también debe tener un método "tocar" que tome un instrumento como
+ argumento y haga que
+ cada músico que toque ese instrumento en su lista toque ese instrumento en secuencia.
+
+Tu tarea es implementar este modelo de objetos utilizando clases abstractas, herencia e interfaces.
+Debes incluir un programa principal que cree una banda y algunos músicos e instrumentos
+de ejemplo, y que pruebe las diferentes funcionalidades
+de la banda. Además, debes responder
+a las siguientes preguntas:
+¿Cómo implementarías la capacidad de agregar nuevos instrumentos a la
+lista de instrumentos de un músico existente?
+¿Cómo implementarías la capacidad de agregar nuevos músicos a la lista de músicos
+ de un instrumento existente?
+¿Cómo se podrían eliminar músicos o instrumentos de la banda sin afectar la integridad
+del modelo de objetos?

@@ -9,7 +9,6 @@ class NoPerecedero(): Producto() {
         super.precio = precio
         this.tipo = tipo
     }
-    override fun Calcular(cant_prod: Int) =  cant_prod * precio
     override fun toString(): String {
         return "NoPerecedero(nombre='$nombre', precio=$precio, tipo='$tipo')"
     }

@@ -1,0 +1,21 @@
+Estás desarrollando un juego de estrategia en tiempo real en el que los jugadores controlan
+unidades militares para luchar contra sus oponentes. Tu tarea es implementar un conjunto de clases e
+interfaces para representar diferentes tipos de unidades.
+Cada unidad debe tener un nombre, un tipo de ataque, una cantidad de daño que puede infligir,
+una cantidad de vida y una velocidad de movimiento. Debes crear una clase abstracta "Unidad"
+que incluya los campos de nombre, tipo de ataque, daño, vida y velocidad, así como los métodos
+para obtener y establecer estos campos.
+Para representar diferentes tipos de unidades, debes crear varias subclases de
+"Unidad", como "Infantería", "Caballería", "Arquero", etc. Cada subclase debe implementar la
+interfaz "Atacante" si tiene capacidad de ataque, que tiene un método "atacar" que toma otra
+unidad como argumento y devuelve la cantidad de daño infligido.
+Además, debes crear una interfaz "Movible" que tiene un método "mover" que toma una
+ubicación como argumento y actualiza la posición de la unidad.
+Por último, debes crear una clase "Ejército" que tenga una lista de unidades y que pueda
+agregar unidades a la lista y buscar unidades por nombre. La clase
+"Ejército" también debe tener un método
+"atacar" que tome una unidad como argumento y la ataque con todas las unidades en la lista.
+Tu tarea es implementar este modelo de objetos utilizando clases abstractas, herencia e
+interfaces,y deducir qué tipo de clase o interfaz debe implementar en cada caso.
+Debes incluir un programa principal que cree un ejército y algunas unidades de ejemplo,
+y que pruebe las diferentes funcionalidades del ejército.

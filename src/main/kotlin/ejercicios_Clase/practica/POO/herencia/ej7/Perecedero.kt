@@ -17,9 +17,9 @@ class Perecedero() : Producto() {
         var precioF = precio
         when(diasParaCaducar)
         {
-           1 -> precioF = cant_prod * (precio * 0.80) //4 veces¿?
-           2 -> precioF = cant_prod * (precio * 0.60) //3 veces¿?
-           3 -> precioF = cant_prod * (precio * 0.50)
+           1 -> precioF = super.Calcular(cant_prod) / 4
+           2 -> precioF = super.Calcular(cant_prod) / 3
+           3 -> precioF = super.Calcular(cant_prod) / 2
         }
         return precioF
     }

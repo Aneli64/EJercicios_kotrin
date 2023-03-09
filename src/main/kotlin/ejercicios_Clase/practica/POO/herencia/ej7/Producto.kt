@@ -1,6 +1,11 @@
 package ejercicios_Clase.practica.POO.herencia.ej7
 
 abstract class Producto() {
+
+    companion object{
+        var cont = 0
+    }
+
     var nombre: String = ""
     var precio: Double = 0.0
         set(value) {
@@ -12,7 +17,7 @@ abstract class Producto() {
         this.precio = precio
     }
 
-    abstract fun Calcular(cant_prod: Int): Double
+    open fun Calcular(cant_prod: Int) = cant_prod * precio
     override fun toString(): String {
         return "Producto(nombre='$nombre', precio=$precio)"
     }
