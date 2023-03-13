@@ -6,4 +6,8 @@ class SocioPlus(nombre: String, edad: Int, numeroSocio: Int, actividadesPosibles
     override fun añadirActividad(actividad: String){
         actividadesPosibles[cont] = actividad
     }
+
+    override fun toString(): String {
+        return "SocioPlus(nombre='$nombre', edad=$edad, numeroSocio=$numeroSocio, actividadesPosibles='$actividadesPosibles')"
+    }
 }

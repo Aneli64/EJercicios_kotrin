@@ -3,6 +3,7 @@ package ejercicios_Clase.practica.examenHerencia
 open class Socio() : Persona() {
 
     companion object {
+        val activDisp = mutableMapOf<Int, String>(0 to "karate", 1 to "spinning", 2 to "pilates")
         var cont = 0
         var contIguales = 0
     }
@@ -14,24 +15,14 @@ open class Socio() : Persona() {
     var actividadesPosibles: MutableMap<Int, String> = mutableMapOf() //deberia ser private
 
     open fun añadirActividad(actividad: String) {
-        if (actividad in listOf("karate", "spinning")) {
-            when (actividad) { //revisar este when
-                "karate" -> {
-                    actividadesPosibles[cont] = actividad
-                    cont++
-                }
-
-                "spinning" -> {
-                    actividadesPosibles[cont] = actividad
-                    cont++
-                }
-
-                else -> {
-                    if (contIguales < 1) {
-                        actividadesPosibles[cont] = "otro"
-                        cont++
-                    }
-                }
+        if (actividad in activDisp.values) {
+            actividadesPosibles[cont] = actividad
+            cont++
+        }
+        else{
+            if (contIguales < 1) {
+                actividadesPosibles[cont] = "otro"
+                contIguales++
             }
         }
     }
