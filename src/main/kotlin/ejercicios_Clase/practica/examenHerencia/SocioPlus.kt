@@ -5,6 +5,7 @@ class SocioPlus(nombre: String, edad: Int, numeroSocio: Int, actividadesPosibles
     override fun balanceMensual() = if(edad < 18) 40.0 else 60.0
     override fun añadirActividad(actividad: String){
         actividadesPosibles[cont] = actividad
+        cont++
     }
 
     override fun toString(): String {

@@ -9,7 +9,7 @@ class Trabajador(): Persona() {
         set(value) {
             if (value > 0) field = value
         }
-    override fun balanceMensual() = -(sueldo + seguridadSocial) //comprobar
+    override fun balanceMensual() = -(sueldo + seguridadSocial)
     override fun toString(): String {
         return "Trabajador(nombre='$nombre', edad=$edad, sueldo=$sueldo, seguridadSocial=$seguridadSocial)"
     }
