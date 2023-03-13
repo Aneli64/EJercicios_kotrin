@@ -17,8 +17,8 @@ class Gimnasio(var nombre: String, var direccion: String, var listaPersonas: Lis
 }
 
 fun main() {
-    val trabajador1 = Trabajador("Carlos", 21, 1200.0, 250.0)
-    val trabajador2 = Trabajador("Laura", 30, 1400.0, 350.0)
+    val trabajador1 = Trabajador("Carlos", 21, 1250.0, 250.0)
+    val trabajador2 = Trabajador("Laura", 30, 1100.0, 350.0)
     val socio1 = Socio("Mario", 15, 3, mutableMapOf())
     socio1.añadirActividad("pilates")
     val socioActividad1 = SocioConActividades("Pepito", 20, 4, mutableMapOf())
@@ -37,8 +37,7 @@ fun main() {
 
     val listaPers = listOf(trabajador1, trabajador2, socio1, socioActividad1, socioActividad2, socioPlus)
     val gym = Gimnasio("Lumpine", "Calle ancha", listaPers)
-    //println(gym.mostrarDatos())
-    println(socioPlus.toString())
+    println(gym.mostrarDatos())
     gym.balanceMensualCadaUno()
     println(gym.balanceTotal())
 
