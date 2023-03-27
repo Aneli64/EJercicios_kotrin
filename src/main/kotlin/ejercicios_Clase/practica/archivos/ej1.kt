@@ -1,5 +1,6 @@
 package ejercicios_Clase.practica.archivos
 
+import ejercicios_Clase.practica.POO.iniciales.Coche
 import java.io.File
 
 class Menu() {
@@ -13,7 +14,7 @@ class Menu() {
                 3 -> {
                     println("Nombre del archivo a eliminar: \n")
                     val archivo = readln()
-                    eliminarArchivo(File(archivo))
+                    eliminarArchivo(File("C:\\Users\\Usuario\\Desktop\\$archivo"))
                 }
 
                 4 -> {
@@ -90,11 +91,18 @@ class Menu() {
         return lista
     }
 
-    fun listarTodo() { //falta que si tiene varios directorios, los archivos vayan saliendo cada vez mas a la derecha
-        val archivo = File("C:\\Users\\Usuario\\Desktop")
+    fun listarTodo() { //falta que si tiene varios directorios, los archivos vayan saliendo cada vez mas a la derecha (aunque si los lista todos ya)
+        val archivo = File("C:\\Users\\Usuario\\Desktop\\ejercicioFile")
         for (item in archivo.listFiles()!!) {
             when {
-                item.isDirectory -> println("Directorio: $item \n Ficheros: \n ${listarDirectorio(item)}")
+                item.isDirectory -> {
+                    println("Directorio: ${item.name} \n Ficheros: \n ")
+                    for (indice in item.listFiles()!!) {
+                        if (indice.isDirectory) println("--------${listarDirectorio(indice)}")
+                        else println("----${listarDirectorio(item)}")
+                    }
+                }
+
                 item.isFile -> println(item.name)
             }
         }
@@ -108,9 +116,16 @@ class Menu() {
             println("Archivo no encontrado o sin permisos de escritura")
         }
     }
+
+    fun cocheFile(archivo: File, coche: Coche) = archivo.writeText(coche.toString())
+
 }
 
 fun main() {
     val ej = Menu()
     ej.inicio()
+    //val coche = Coche("Amarillo", "Ford", "Fiesta", 10, "SDGC123")
+
+    //val file = File("C:\\Users\\Usuario\\Desktop\\directorio\\ejemplo.txt")
+    //println(ej.cocheFile(file, coche))
 }
