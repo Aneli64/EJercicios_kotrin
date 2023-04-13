@@ -1,6 +1,6 @@
 package ejercicios_practica_internet.ejs_varios.codeWars
 import java.util.Arrays
-
+/*
 // if these g-steps prime numbers don't exist return []
 /*
 g(entero >= 2) que indica el paso que buscamos,
@@ -34,4 +34,4 @@ fun step(g:Int, m:Long, n:Long) {
 fun main(){
     step(2,2,50)
 }
-
+*/

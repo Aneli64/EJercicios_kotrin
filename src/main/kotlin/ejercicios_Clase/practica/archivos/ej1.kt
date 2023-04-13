@@ -124,8 +124,8 @@ class Menu() {
 fun main() {
     val ej = Menu()
     ej.inicio()
-    //val coche = Coche("Amarillo", "Ford", "Fiesta", 10, "SDGC123")
+    val coche = Coche("Amarillo", "Ford", "Fiesta", 10, "SDGC123")
 
-    //val file = File("C:\\Users\\Usuario\\Desktop\\directorio\\ejemplo.txt")
-    //println(ej.cocheFile(file, coche))
+    val file = File("C:\\Users\\Usuario\\Desktop\\directorio\\ejemplo.txt")
+    println(ej.cocheFile(file, coche))
 }
