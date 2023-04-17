@@ -1,7 +1,4 @@
 package ejercicios_Clase.practica.POO.herencia.ej3
-
-import ejercicios_Clase.practica.POO.iniciales.Producto
-import ejercicios_practica_internet.ejs_Funciones.producto
 import java.io.File
 
 /*
@@ -89,14 +86,14 @@ class MyOnlineShop {
     fun crearBook() {
         print("Regular Price -> ")
         val regularPrice = readln().toDouble()
-        print("IVA -> ")
-        val IVA = readln()
         print("publisher -> ")
-        val publisher = readln().toInt()
+        val publisher = readln()
         print("yearPublished -> ")
         val yearPublished = readln().toInt()
+        print("IVA -> ")
+        val IVA = readln().toInt()
 
-        val book = Book(regularPrice, IVA, publisher, yearPublished)
+        val book = Book(regularPrice, publisher, yearPublished, IVA)
         listaObjetos.add(book)
     }
 
@@ -131,10 +128,10 @@ class MyOnlineShop {
         val regularPrice = readln().toDouble()
         print("manufacturer -> ")
         val manufacturer = readln()
-        print("IVA -> ")
-        val IVA = readln().toInt()
         print("size -> ")
         val size = readln().toInt()
+        print("IVA -> ")
+        val IVA = readln().toInt()
 
         val tv = TV(regularPrice, manufacturer, size, IVA)
         listaObjetos.add(tv)
