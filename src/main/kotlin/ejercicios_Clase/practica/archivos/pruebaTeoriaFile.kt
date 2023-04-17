@@ -98,14 +98,13 @@ el bloc de notas y compara su contenido
      problema cuando se pase del número de caracteres posibles debe volver al principio
     -segundo método utiliza una función de encriptación de kotlin
      */
-    fun cifradoCesar(fileOrig: File, fileDest: File) { //falta que el usuario diga el numero de saltos
-        //cifrado en +3
+    fun cifradoCesar(fileOrig: File, fileDest: File, num_saltos: Int) {
         val textoMinus = fileOrig.readText().toLowerCase()
         var textoEncriptado = ""
         val alfabeto = "abcdefghijklmnñopqrstuvwxyz"
         for (item in textoMinus) {
             val numLetra = alfabeto.indexOf(item)
-            var nuevaLetra = numLetra + 3 // el 3 es el numero ingresado por el usuario
+            var nuevaLetra = numLetra + num_saltos // el 3 es el numero ingresado por el usuario
             if (item !in alfabeto) {
                 textoEncriptado += item
             } else {
@@ -132,7 +131,7 @@ el bloc de notas y compara su contenido
     println("Elija un metodo de encriptacion: \n 1. Cifrado César \n 2. Encriptacion de kotlin")
     val metEncrip = readln().toInt()
     when (metEncrip) {
-        1 -> cifradoCesar(fileOrigen, fileDestino)
+        1 -> cifradoCesar(fileOrigen, fileDestino, 3)
     }
 
 

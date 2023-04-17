@@ -15,10 +15,10 @@ Añade una función que devuelve el valor del último objeto
 
 class TV(regularPrice: Double, manufacturer: String, var size: Int, IVA: Int): Electronics(regularPrice, manufacturer, IVA) {
     override fun computeSalePrice() = regularPrice * 0.8
-    override fun toString(): String {
-        return "TV \n ${"=".repeat(20)} \n " +
-                "regular price -> $regularPrice \n manufacturer -> $manufacturer \n size -> $size \n ${"=".repeat(20)}"
-    }
+
     //Para TV, restar 100 al precio de venta
     override fun computeSpecialCustomerPrice() = computeSalePrice() - 100.0
+    override fun toString(): String {
+        return "TV,$regularPrice,$manufacturer,$size,$IVA"
+    }
 }

@@ -8,10 +8,10 @@ El cálculo del precio de venta es el precio regular * 0,7.
 
 class Camera(regularPrice: Double, manufacturer: String, IVA: Int) :Electronics(regularPrice, manufacturer, IVA) {
     override fun computeSalePrice() = regularPrice * 0.7
-    override fun toString(): String {
-        return "Book \n ${"=".repeat(20)} \n " +
-                "regular price -> $regularPrice \n manufacturer -> $manufacturer \n ${"=".repeat(20)}"
-    }
-    //PAra cámara restar 205 al precio de venta
+
+    //Para cámara restar 205 al precio de venta
     override fun computeSpecialCustomerPrice() = computeSalePrice() - 205.0
+    override fun toString(): String {
+        return "Camera,$regularPrice,$manufacturer,$IVA"
+    }
 }

@@ -10,10 +10,11 @@ Sale Price El cálculo del precio de venta es el precio regular * 0,5.
 
 class Book(regularPrice: Double, var publisher: String, var yearPublished: Int, IVA: Int) : Produt(regularPrice, IVA){
     override fun computeSalePrice() = regularPrice * 0.5
-    override fun toString(): String {
-        return "Book \n ${"=".repeat(20)} \n " +
-                "regular price -> $regularPrice \n publisher -> $publisher \n yearPublished -> $yearPublished \n ${"=".repeat(20)}"
-    }
+
+
     //Para Book, restar 2 al precio de venta
     override fun computeSpecialCustomerPrice() = computeSalePrice() - 2.0
+    override fun toString(): String {
+        return "Book,$regularPrice,$IVA,$publisher,$yearPublished"
+    }
 }
