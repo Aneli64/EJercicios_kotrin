@@ -65,20 +65,22 @@ class MyOnlineShop {
 
     fun obtenerObjetos(archivo: File, listaObj: MutableList<Produt>){
         val lista = mutableListOf<List<String>>()
-        archivo.forEachLine { lista.add(it.split(","))}
-        for (item in lista){
-            when(item[0]){
-                "Book" -> listaObj.add(Book(item[1].toDouble(), item[2], item[3].toInt(), item[4].toInt()))
-                "Camera" -> listaObj.add(Camera(item[1].toDouble(), item[2], item[3].toInt()))
-                "MP3Player" -> listaObj.add(MP3Player(item[1].toDouble(), item[2], item[3], item[4].toInt()))
-                "TV" -> listaObj.add(TV(item[1].toDouble(), item[2], item[3].toInt(), item[4].toInt()))
+        archivo.forEachLine { lista.add(it.split(","))} //igual da fallo por esto MIRAR
+        for (i in 0 until lista.size){
+            for (j in 0 until lista[i].size) {
+                when (lista[i][j]) {
+                    "Book" -> listaObj.add(Book(lista[i][1].toDouble(), lista[i][2], lista[i][3].toInt(), lista[i][4].toInt()))
+                    "Camera" -> listaObj.add(Camera(lista[i][1].toDouble(), lista[i][2], lista[i][3].trim().toInt()))
+                    "MP3Player" -> listaObj.add(MP3Player(lista[i][1].toDouble(), lista[i][2],lista[i][3], lista[i][4].toInt()))
+                    "TV" -> listaObj.add(TV(lista[i][1].toDouble(), lista[i][2], lista[i][3].toInt(), lista[i][4].trim().toInt()))
+                }
             }
         }
     }
     fun mostrarListaProductos() = listaObjetos.toString()
     fun addArticulosFile(archivo: File, listaObj: MutableList<Produt>) {
         var texto = ""
-        listaObj.forEach { texto += "$it \n" }
+        listaObj.forEach { texto += "$it\n" }
         archivo.writeText(texto)
     }
 
@@ -143,6 +145,6 @@ fun main() {
     val ej = MyOnlineShop()
     //ej.tienda()
     ej.inicio()
-    println(ej.mostrarListaProductos())
+    //println(ej.mostrarListaProductos())
 }
 

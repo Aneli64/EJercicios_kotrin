@@ -15,6 +15,6 @@ class Book(regularPrice: Double, var publisher: String, var yearPublished: Int, 
     //Para Book, restar 2 al precio de venta
     override fun computeSpecialCustomerPrice() = computeSalePrice() - 2.0
     override fun toString(): String {
-        return "Book,$regularPrice,$IVA,$publisher,$yearPublished"
+        return "Book,$regularPrice,$publisher,$yearPublished,$IVA"
     }
 }
