@@ -17,7 +17,8 @@ fun main(){
     val file = File("C:\\Users\\Usuario\\Desktop\\ejemplos\\ficheroPalabras.txt")
 
     file.writeText(palabras)
-    println(ordenarPalabras(file))
+    ordenarPalabras(file)
+
 }
 
 fun ordenarPalabras(archivo: File){
@@ -30,10 +31,3 @@ fun ordenarPalabras(archivo: File){
     archivoDest.writeText(salida)
 }
 
-fun ordenarPor(archivo: File, productos: MutableList<Produt>){
-    println("Por que campo desea ordenar su documento: \n Numero del campo: ")
-    var entrada = readln().toInt()
-    when(entrada){
-        //1 -> productos.sortBy { productos[] }
-    }
-}

@@ -1,5 +1,6 @@
 package ejercicios_Clase.practica.archivos.ejFileProductos
 import java.io.File
+import kotlin.math.max
 
 /*
 Escribir el método main de la clase MyOnlineShop
@@ -61,6 +62,9 @@ class MyOnlineShop {
             entrada = readln().toInt()
         }
         addArticulosFile(file, listaObjetos)
+
+        val fileOrd = File("C:\\Users\\Usuario\\Desktop\\ejemplos\\productosOrd.txt")
+        //ordenarPor(fileOrd, listaObjetos) sin terminar
     }
 
     fun obtenerObjetos(archivo: File, listaObj: MutableList<Produt>){
@@ -138,6 +142,14 @@ class MyOnlineShop {
         val tv = TV(regularPrice, manufacturer, size, IVA)
         listaObjetos.add(tv)
     }
+    /*fun ordenarPor(archivo: File, productos: MutableList<Produt>){
+        println("Por que campo desea ordenar su documento: \n Numero del campo: ")
+        val entrada = readln().toInt()
+        var productosOrd = ""
+        when(entrada){
+            1 -> productosOrd += productos.sortedBy { productos } }
+        archivo.writeText(productosOrd)
+    }*/
 
 }
 
@@ -146,5 +158,7 @@ fun main() {
     //ej.tienda()
     ej.inicio()
     //println(ej.mostrarListaProductos())
+
+
 }
 
